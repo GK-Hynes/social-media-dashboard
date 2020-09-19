@@ -7,7 +7,11 @@
   --twitter: hsl(203, 89%, 53%);
   --instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
   --youtube: hsl(348, 97%, 39%);
-  --toggle-dark-theme: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --toggle-dark-theme: linear-gradient(
+    to right,
+    hsl(210, 78%, 56%),
+    hsl(146, 68%, 55%)
+  );
   --toggle-light-theme: hsl(230, 22%, 74%);
   /* dark theme */
   --very-dark-blue-bg: hsl(230, 17%, 14%);
@@ -56,11 +60,54 @@ body {
   border-bottom: 1px solid var(--dark-grayish-blue);
 }
 
-.toggle-label {
+/* toggle */
+
+.toggle__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle__label {
   font-weight: 600;
   color: var(--dark-grayish-blue);
   margin: 1rem 0;
 }
+
+.toggle__switch {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.5rem;
+  background-color: var(--toggle-light-theme);
+  border-radius: 1.25rem;
+  transition: all 0.3s;
+}
+.toggle__switch::after {
+  content: "";
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background-color: white;
+  top: 0.125rem;
+  left: 1.5rem;
+  transition: all 0.3s;
+}
+
+.toggle__input:checked + .toggle__switch::after {
+  left: 0.125rem;
+}
+
+.toggle__input:checked + .toggle__switch {
+  background-color: var(--toggle-light-theme);
+}
+
+.toggle__input {
+  display: none;
+}
+
+/* cards */
 
 .card-grid--top {
   display: grid;
