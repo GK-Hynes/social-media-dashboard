@@ -94,11 +94,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--text-secondary);
+}
+
+.toggle__wrapper:hover {
+  color: var(--text-primary);
 }
 
 .toggle__label {
   font-weight: 600;
-  color: var(--text-secondary);
+  color: inherit;
   margin: 1rem 0;
 }
 
@@ -234,7 +239,7 @@ body {
 
 .card__followers {
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.2rem;
   color: var(--text-secondary);
   margin-bottom: 1rem;
 }
